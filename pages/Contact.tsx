@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-stone-800 mb-1">Email</h4>
-                  <p className="text-stone-600">contact@kine-rolampont.fr</p>
+                  <a href="mailto:contact@kinerolampont.com" className="text-stone-600 hover:text-sage-800 transition-colors">contact@kinerolampont.com</a>
                 </div>
               </div>
 

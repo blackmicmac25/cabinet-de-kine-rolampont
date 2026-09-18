@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kine-rolampont.fr/sitemap.xml
+Sitemap: https://www.kinerolampont.com/sitemap.xml
