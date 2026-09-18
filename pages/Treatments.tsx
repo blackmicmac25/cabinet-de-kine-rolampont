@@ -93,36 +93,53 @@ const reeducationTreatments = [
 
 const wellnessTreatments = [
   {
-    icon: Sparkles,
-    title: "Pilates Thérapeutique",
-    desc: "Une méthode douce pour renforcer les muscles profonds et corriger la posture durablement.",
-    details: [
-      "Renforcement de la sangle abdominale (Core)",
-      "Lutte contre le mal de dos chronique",
-      "Amélioration de la souplesse et de l'équilibre",
-      "Cours individuels ou en duo"
-    ]
-  },
-  {
     icon: Droplets,
     title: "Drainage Lymphatique Brésilien",
-    desc: "Un massage tonique et profond pour stimuler la circulation, réduire la rétention d'eau et sculpter le corps.",
+    badge: "Offre de lancement devient abonnement",
+    desc: "Un massage manuel tonique, dynamique et profond pour stimuler intensément le système lymphatique, éliminer les toxines et résorber la rétention d'eau.",
+    practitioner: "Mauricia Guenengaye",
+    pricing: "Abonnement 5 séances (360 €) • 10 séances (680 €)",
+    link: "/tarifs#drainage-bresilien",
+    flyer: "/images/drainage-lymphatique-bresilien.jpg",
     details: [
-      "Réduction des œdèmes et sensation de jambes lourdes",
-      "Amélioration de la circulation sanguine et lymphatique",
-      "Détoxification de l'organisme",
-      "Effet sculptant et affinant immédiat"
+      "Réduction spectaculaire des œdèmes et sensation de jambes légères",
+      "Amélioration de la circulation sanguine et lymphatique globale",
+      "Détoxification de l'organisme et ventre dégonflé",
+      "Effet sculptant, remodelant et affinant dès la première séance",
+      "Séances sur RDV au cabinet de Rolampont (06 50 89 35 13)"
     ]
   },
   {
     icon: Hand,
-    title: "Maderothérapie Colombienne",
-    desc: "Une technique de massage utilisant des instruments en bois pour remodeler la silhouette et éliminer la cellulite.",
+    title: "Madérothérapie Colombienne",
+    badge: "Sculpte – Raffermit – Draine – Tonifie",
+    desc: "Technique holistique ancestrale utilisant des instruments anatomiques en bois naturel pour remodeler la silhouette, activer le métabolisme et déloger la cellulite rebelle.",
+    practitioner: "Mauricia Guenengaye",
+    pricing: "À la séance (60 € - 65 €) • Cures 5 & 10 séances dès 270 €",
+    link: "/tarifs#maderotherapie",
+    flyer: "/images/maderotherapie-colombienne.jpg",
     details: [
-      "Casse les amas graisseux et la cellulite",
-      "Tonifie et raffermit la peau",
-      "Stimule la production d'élastine et de collagène",
-      "Détend les tensions musculaires"
+      "Bas du corps (fessiers, cuisses) : cellulite incrustée, jambes lourdes, fermeté",
+      "Ventre & flancs : ventre plat, réduction des ballonnements, tour de taille affiné",
+      "Haut du corps (bras, dos, épaules) : relâchement cutané, fermeté, tonus musculaire",
+      "Booste le métabolisme et stimule collagène et élastine",
+      "Sur RDV uniquement avec Mauricia (06 50 89 35 13 / Messenger / Instagram)"
+    ]
+  },
+  {
+    icon: Sparkles,
+    title: "Pilates Thérapeutique & Mau Pilates",
+    badge: "Renforcement profond & Posture",
+    desc: "Une méthode douce et ciblée pour renforcer les muscles profonds, soulager le dos et corriger la posture durablement dans une approche respectueuse du corps.",
+    practitioner: "Mauricia Guenengaye",
+    pricing: "Séance d'essai (14 €) • Abonnements collectifs ou coaching individuel/duo",
+    link: "/mau-pilates",
+    flyer: null,
+    details: [
+      "Renforcement de la sangle abdominale (Core) et plancher pelvien",
+      "Soulagement durable des maux de dos et des tensions",
+      "Amélioration de la souplesse, de la mobilité et de la respiration",
+      "Cours collectifs (8 pers. max) ou accompagnement sur-mesure individuel"
     ]
   }
 ];
@@ -235,9 +252,13 @@ const Treatments: React.FC = () => {
         </div>
 
         <div className="mb-12 text-center">
-          <h2 className="font-serif text-3xl text-sage-900">Soins de Bien-Être</h2>
+          <span className="text-sage-600 font-bold tracking-widest uppercase text-xs">Détente, Drainage & Remodelage</span>
+          <h2 className="font-serif text-3xl md:text-4xl text-sage-900 mt-2">Soins de Bien-Être & Abonnements</h2>
+          <p className="text-stone-500 max-w-2xl mx-auto mt-3">
+            Des soins signatures dispensés par <strong>Mauricia Guenengaye</strong> au cabinet de Rolampont pour sculpter, raffermir et détoxifier votre corps en profondeur.
+          </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {wellnessTreatments.map((t, i) => (
             <motion.div
               key={i}
@@ -245,32 +266,65 @@ const Treatments: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white rounded-[2.5rem] p-8 lg:p-10 border border-stone-100 hover:border-sage-200 hover:shadow-2xl hover:shadow-sage-100/40 transition-all duration-500 flex flex-col"
+              className="group bg-white rounded-[2.5rem] p-8 lg:p-9 border border-stone-100 hover:border-sage-300 hover:shadow-2xl hover:shadow-sage-100/40 transition-all duration-500 flex flex-col justify-between"
             >
-              <div className="flex items-start justify-between mb-8">
-                <div className="w-16 h-16 bg-sage-50 rounded-2xl flex items-center justify-center text-sage-600 group-hover:bg-sage-600 group-hover:text-white transition-colors duration-500">
-                  <t.icon size={32} />
+              <div>
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 bg-sage-50 rounded-2xl flex items-center justify-center text-sage-600 group-hover:bg-sage-600 group-hover:text-white transition-colors duration-500">
+                    <t.icon size={28} />
+                  </div>
+                  {t.badge && (
+                    <span className="px-3 py-1 bg-sage-50 text-sage-800 text-[11px] font-bold rounded-full border border-sage-100/80 text-right">
+                      {t.badge}
+                    </span>
+                  )}
                 </div>
-                <div className="bg-stone-50 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowRight className="w-5 h-5 text-sage-600" />
+                
+                <h3 className="font-serif text-2xl text-sage-900 mb-3 group-hover:text-sage-700 transition-colors">{t.title}</h3>
+                <p className="text-xs font-semibold text-sage-600 uppercase tracking-wider mb-3">Par {t.practitioner}</p>
+                <p className="text-stone-500 text-sm mb-6 leading-relaxed">
+                  {t.desc}
+                </p>
+
+                {/* Tarifs résumé */}
+                <div className="bg-sage-50/70 p-4 rounded-2xl border border-sage-100 mb-6">
+                  <span className="text-[11px] font-bold text-sage-700 uppercase tracking-wider block mb-1">Formules & Tarifs</span>
+                  <p className="text-xs font-semibold text-sage-900">{t.pricing}</p>
                 </div>
               </div>
-              
-              <h3 className="font-serif text-2xl lg:text-3xl text-sage-900 mb-4 group-hover:text-sage-700 transition-colors">{t.title}</h3>
-              <p className="text-stone-500 mb-8 leading-relaxed">
-                {t.desc}
-              </p>
 
-              <div className="mt-auto bg-stone-50/50 rounded-2xl p-6">
-                <p className="text-xs font-bold text-sage-500 uppercase tracking-widest mb-4">Prise en charge</p>
-                <ul className="space-y-3">
-                  {t.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-stone-600 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-sage-400 mt-0.5 shrink-0" />
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div>
+                <div className="bg-stone-50/70 rounded-2xl p-5 mb-6">
+                  <p className="text-[11px] font-bold text-sage-500 uppercase tracking-widest mb-3">Bénéfices & Cibles</p>
+                  <ul className="space-y-2.5">
+                    {t.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-stone-600 text-xs">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-sage-500 mt-0.5 shrink-0" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="space-y-2 pt-2">
+                  <Link 
+                    to={t.link}
+                    className="w-full py-3 bg-sage-900 text-white rounded-xl text-xs font-bold hover:bg-sage-800 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <span>Découvrir les tarifs & abonnements</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                  {t.flyer && (
+                    <a 
+                      href={t.flyer} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full py-2 bg-stone-100 text-stone-700 hover:text-stone-900 rounded-xl text-[11px] font-medium transition-colors flex items-center justify-center gap-1.5"
+                    >
+                      <span>📄 Consulter l'affiche officielle</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

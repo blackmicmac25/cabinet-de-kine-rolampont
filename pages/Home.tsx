@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Activity, Hand, Wind, Heart, Play, Sparkles } from 'lucide-react';
+import { Activity, Hand, Wind, Heart, Play, Sparkles, Droplets, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface HomeProps {
@@ -297,6 +297,111 @@ const Home: React.FC<HomeProps> = ({ onBookClick }) => {
                 <p className="text-stone-500 text-sm leading-relaxed">{spec.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Spotlight : Drainage Brésilien & Madérothérapie */}
+      <section className="py-20 bg-stone-100/70 border-y border-stone-200/60">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <span className="inline-block px-4 py-1.5 bg-sage-200 text-sage-800 text-xs font-bold uppercase tracking-wider rounded-full mb-3">
+              Nouveautés & Abonnements
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-sage-900 mb-4">
+              Remodelage Corporel & Soins Signatures
+            </h2>
+            <p className="text-stone-600 max-w-2xl mx-auto">
+              Dispensés par <strong>Mauricia Guenengaye</strong> au cabinet de Rolampont. Découvrez nos abonnements et cures pour des résultats visibles et durables.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Drainage Brésilien */}
+            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-stone-200 flex flex-col justify-between hover:shadow-xl transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-sage-50 rounded-2xl flex items-center justify-center text-sage-600">
+                    <Droplets size={24} />
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-sage-800 bg-sage-100 px-3 py-1 rounded-full">
+                    Abonnements
+                  </span>
+                </div>
+                <h3 className="font-serif text-2xl text-sage-900 mb-2">Drainage Lymphatique Brésilien</h3>
+                <p className="text-stone-500 text-sm leading-relaxed mb-6">
+                  Massage tonique et profond pour détoxifier l'organisme, éliminer la rétention d'eau et obtenir un effet affinant et dégonflé immédiat.
+                </p>
+                <div className="bg-stone-50 p-4 rounded-2xl border border-stone-100 mb-6 text-xs text-stone-700 space-y-1">
+                  <div className="flex justify-between font-semibold">
+                    <span>Abonnement 5 séances :</span>
+                    <span className="text-sage-900 font-bold">360 € (72 €/s.)</span>
+                  </div>
+                  <div className="flex justify-between font-semibold">
+                    <span>Abonnement 10 séances :</span>
+                    <span className="text-sage-900 font-bold">680 € (68 €/s.)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link 
+                  to="/tarifs#drainage-bresilien" 
+                  className="flex-1 py-3 px-4 bg-sage-900 text-white rounded-xl text-xs font-bold text-center hover:bg-sage-800 transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>Voir le détail des tarifs</span>
+                  <ArrowRight size={14} />
+                </Link>
+                <a 
+                  href="tel:0650893513" 
+                  className="py-3 px-4 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-xl text-xs font-bold text-center transition-colors"
+                >
+                  📞 Réserver au 06 50 89 35 13
+                </a>
+              </div>
+            </div>
+
+            {/* Madérothérapie Colombienne */}
+            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-stone-200 flex flex-col justify-between hover:shadow-xl transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-sage-50 rounded-2xl flex items-center justify-center text-sage-600">
+                    <Hand size={24} />
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-sage-800 bg-sage-100 px-3 py-1 rounded-full">
+                    Cures Ciblées
+                  </span>
+                </div>
+                <h3 className="font-serif text-2xl text-sage-900 mb-2">Madérothérapie Colombienne</h3>
+                <p className="text-stone-500 text-sm leading-relaxed mb-6">
+                  Technique colombienne aux instruments en bois naturel : sculpte, raffermit, draine et élimine la cellulite (Bas du corps, Ventre & Flancs, Haut du corps).
+                </p>
+                <div className="bg-stone-50 p-4 rounded-2xl border border-stone-100 mb-6 text-xs text-stone-700 space-y-1">
+                  <div className="flex justify-between font-semibold">
+                    <span>Séances à l'unité :</span>
+                    <span className="text-sage-900 font-bold">60 € ou 65 €</span>
+                  </div>
+                  <div className="flex justify-between font-semibold">
+                    <span>Cures 5 et 10 séances :</span>
+                    <span className="text-sage-900 font-bold">Dès 270 € (-30€ à -97€)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link 
+                  to="/tarifs#maderotherapie" 
+                  className="flex-1 py-3 px-4 bg-sage-900 text-white rounded-xl text-xs font-bold text-center hover:bg-sage-800 transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>Voir les 3 zones & tarifs</span>
+                  <ArrowRight size={14} />
+                </Link>
+                <a 
+                  href="tel:0650893513" 
+                  className="py-3 px-4 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-xl text-xs font-bold text-center transition-colors"
+                >
+                  📞 Réserver au 06 50 89 35 13
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

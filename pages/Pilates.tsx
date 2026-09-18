@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 const MAURICIA_MAIIA_URL = "https://www.maiia.com/masseur-kinesitherapeute/52260-rolampont/guenengaye-mauricia";
-const PILATES_PHONE = "06 50 89 37 13";
+const PILATES_PHONE = "06 50 89 35 13";
 
 interface PilatesProps {
   onBookClick?: () => void;

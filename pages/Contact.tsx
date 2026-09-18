@@ -37,7 +37,11 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-stone-800 mb-1">Téléphone</h4>
-                  <p className="text-stone-600">09 83 09 33 43</p>
+                  <p className="text-stone-600 text-sm">Cabinet (fixe) : <a href="tel:0983093343" className="font-semibold text-sage-800 hover:underline">09 83 09 33 43</a></p>
+                  <p className="text-stone-600 text-sm mt-1">
+                    Mauricia (Bien-être, Drainage, Madérothérapie, Pilates) : <br/>
+                    <a href="tel:0650893513" className="font-semibold text-sage-800 hover:underline">06 50 89 35 13</a>
+                  </p>
                 </div>
               </div>
 
